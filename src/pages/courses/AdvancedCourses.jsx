@@ -697,7 +697,7 @@ const AdvancedCourses = () => {
 
             <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="relative group">
                <div className="absolute -inset-4 bg-primary/20 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700" />
-               <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Advanced research mathematics" src="https://images.unsplash.com/photo-1581090124321-d19ad6d7cd5a" />
+               <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Advanced higher mathematics and research track courses at Let's Study MS" loading="lazy" src="https://images.unsplash.com/photo-1581090124321-d19ad6d7cd5a" />
             </motion.div>
           </div>
         </div>

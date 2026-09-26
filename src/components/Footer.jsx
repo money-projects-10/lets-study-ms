@@ -66,7 +66,7 @@ const Footer = () => {
             <Link to="/" onClick={() => window.scrollTo(0,0)} className="inline-block group">
               <img
                 src="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg"
-                alt="Logo"
+                alt="Let's Study MS - School of Mathematics Logo"
                 className="h-20 w-auto rounded-2xl p-2 bg-background border border-border shadow-2xl transition-transform group-hover:rotate-2"
               />
             </Link>

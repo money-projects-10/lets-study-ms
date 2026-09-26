@@ -44,7 +44,7 @@ const Header = () => {
         <Link to="/" className="flex items-center group">
           <img
             src="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg"
-            alt="Logo"
+            alt="Let's Study MS - School of Mathematics Logo"
             className="h-10 w-auto rounded-xl ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all duration-500"
           />
         </Link>

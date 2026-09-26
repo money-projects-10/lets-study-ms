@@ -131,7 +131,7 @@ const PhDEntrances = () => {
     <div className="noise-bg min-h-screen bg-background text-foreground transition-colors duration-500">
       <Helmet>
         <title>PhD Maths Entrance Coaching West Bengal | TIFR CSIR</title>
-        <meta name="description" content="PhD Mathematics entrance coaching in West Bengal. Prepare for TIFR, IIT, IISc, HRI & CSIR NET. Faculty who cracked TIFR Mumbai, IIT Madras, and University of Tokyo." />
+        <meta name="description" content="PhD Mathematics entrance coaching in West Bengal. Prepare for TIFR, IIT, IISc, HRI & CSIR NET with faculty who cracked TIFR Mumbai, IIT Madras & Univ of Tokyo." />
         <meta name="keywords" content="phd mathematics coaching west bengal, TIFR coaching kolkata, CSIR NET mathematics coaching, GATE mathematics west bengal, doctoral entrance preparation india" />
         <link rel="canonical" href="https://letsstudyms.com/courses/phd-entrances" />
         <meta property="og:title" content="PhD Maths Entrance Coaching West Bengal | TIFR CSIR" />
@@ -219,7 +219,7 @@ const PhDEntrances = () => {
 
             <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="relative group lg:sticky lg:top-32">
                <div className="absolute -inset-4 bg-primary/20 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700" />
-               <img className="relative w-full h-[600px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Research level mathematics" src="https://i.postimg.cc/kMk7Qjvc/pexels_mart_production_8472919.jpg" />
+               <img className="relative w-full h-[600px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Doctoral research and PhD entrance mathematics preparation at Let's Study MS" loading="lazy" src="https://i.postimg.cc/kMk7Qjvc/pexels_mart_production_8472919.jpg" />
             </motion.div>
           </div>
         </div>

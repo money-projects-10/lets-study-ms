@@ -102,9 +102,31 @@ For EVERY page (Home, Testimonials, Contact, all 7 course pages):
 
 ---
 
-## Last Audit: 2026-05-13
+## Last Audit: 2026-09-22 (September 2026)
 
 ### Changes Made:
+- **Root SEO (`index.html`)**:
+  - Optimized root `<title>` to 55 chars (`Let's Study MS | Top Mathematics Institute West Bengal`).
+  - Optimized `<meta name="description">` to 155 chars.
+  - Enhanced `EducationalOrganization` JSON-LD schema with complete contact telephone array and official social links (`sameAs`).
+- **Header & Footer Components**:
+  - Replaced generic `alt="Logo"` with descriptive `alt="Let's Study MS - School of Mathematics Logo"` across `Header.jsx` and `Footer.jsx`.
+- **Page Titles & Meta Descriptions**:
+  - Optimized title and meta description character lengths across Home, Testimonials, Contact, and all 7 Course pages to strictly meet the 50-60 char and 150-160 char requirements.
+- **Login / Study Repository Page (`Login.jsx`)**:
+  - Added complete Helmet metadata including canonical URL, OpenGraph tags, Twitter cards, and `BreadcrumbList` schema.
+- **Images & Performance**:
+  - Added `loading="lazy"` and descriptive keyword-rich `alt` text to below-the-fold images across all 7 course pages and Home illustration.
+- **Sitemap (`public/sitemap.xml`)**:
+  - Refreshed all route `<lastmod>` timestamps to `2026-09-22`.
+- **AI Search / GEO & Technical SEO**:
+  - Verified `robots.txt` AI crawler allowances (`GPTBot`, `ClaudeBot`, `PerplexityBot`), `llms.txt`, `.htaccess` SPA routing rules, and 404 `noindex, nofollow` behavior.
+- **Verification**:
+  - Successfully verified production build with 0 errors.
+
+---
+
+## Audit History: 2026-05-13
 - Removed FAQPage schema from index.html (restricted to gov/health)
 - Updated sitemap.xml dates and removed `<priority>` tags
 - Added AI crawler directives to robots.txt
@@ -113,3 +135,4 @@ For EVERY page (Home, Testimonials, Contact, all 7 course pages):
 - Added catch-all 404 route to App.jsx
 - Improved image alt text on logo
 - Added BreadcrumbList schema to Testimonials page
+

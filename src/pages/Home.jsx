@@ -342,11 +342,11 @@ const Home = () => {
     <div className="noise-bg min-h-screen bg-background text-foreground transition-colors duration-500 overflow-x-hidden">
       <Helmet>
         <title>Let's Study MS | Top Math Institute in West Bengal</title>
-        <meta name="description" content="Top math institute in West Bengal for higher education. Expert coaching for IIT JAM, MSc Entrances, TIFR, ISI, & PhD. Faculty from IIT, ISI, IISc." />
+        <meta name="description" content="Top mathematics institute in West Bengal for higher education. Expert coaching for IIT JAM, MSc Entrances, TIFR, ISI & PhD. Faculty from IIT, ISI & IISc." />
         <meta name="keywords" content="mathematical institutes in west bengal, mathematics institute west bengal higher education, mathematics coaching West Bengal, college maths tutor Kolkata, IIT JAM coaching, BSc mathematics coaching, MSc entrance preparation West Bengal, higher education maths West Bengal, best maths coaching kolkata" />
         <link rel="canonical" href="https://letsstudyms.com/" />
         <meta property="og:title" content="Let's Study MS | Top Math Institute in West Bengal" />
-        <meta property="og:description" content="Top math institute in West Bengal for higher education. Expert coaching for IIT JAM, MSc Entrances, TIFR, ISI, & PhD. Faculty from IIT, ISI, IISc." />
+        <meta property="og:description" content="Top mathematics institute in West Bengal for higher education. Expert coaching for IIT JAM, MSc Entrances, TIFR, ISI & PhD. Faculty from IIT, ISI & IISc." />
         <meta property="og:url" content="https://letsstudyms.com/" />
         <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -405,6 +405,16 @@ const Home = () => {
               <p className="text-2xl md:text-3xl font-light tracking-[0.2em] uppercase">School of Mathematics</p>
               <div className="h-[1px] w-12 bg-primary/50" />
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm md:text-base font-semibold tracking-wide mt-2 shadow-sm backdrop-blur-sm"
+            >
+              <Award className="w-4 h-4 text-primary shrink-0" />
+              <span>Affiliated with Ramanujan School of Mathematics (RSM)</span>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -642,7 +652,7 @@ const Home = () => {
             <div className="flex justify-center items-center py-6 lg:py-0">
               <img
                 src="https://i.postimg.cc/8C37fr0X/undraw-educator-6dgp-Photoroom-(1).png"
-                alt="Expert Faculty Illustration"
+                alt="Expert Faculty Illustration - Let's Study MS School of Mathematics"
                 loading="lazy"
                 className="w-full h-auto max-h-[500px] object-contain"
               />

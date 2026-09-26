@@ -101,8 +101,19 @@ const Login = () => {
   return (
     <div className="noise-bg min-h-screen bg-background text-foreground transition-colors duration-500">
       <Helmet>
-        <title>Free Study Material - Let's Study School of Mathematics</title>
-        <meta name="description" content="Access free study materials, notes, and previous year questions for JEE, JAM, NET, and University Exams." />
+        <title>Free Math Study Material & Notes | Let's Study MS</title>
+        <meta name="description" content="Access free higher mathematics study materials, curated notes, assignments and previous year questions for IIT JAM, CSIR NET, GATE and university exams." />
+        <link rel="canonical" href="https://letsstudyms.com/login" />
+        <meta property="og:title" content="Free Math Study Material & Notes | Let's Study MS" />
+        <meta property="og:description" content="Access free higher mathematics study materials, notes, problem sets, and previous year questions for IIT JAM, CSIR NET, and college exams." />
+        <meta property="og:url" content="https://letsstudyms.com/login" />
+        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Free Math Study Material & Notes | Let's Study MS" />
+        <meta name="twitter:description" content="Free higher mathematics study resources, notes, assignments and PYQs for competitive exams." />
+        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://letsstudyms.com/" }, { "@type": "ListItem", "position": 2, "name": "Free Study Material", "item": "https://letsstudyms.com/login" }] })}</script>
       </Helmet>
 
       <Header />

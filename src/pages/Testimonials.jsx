@@ -139,10 +139,10 @@ const Testimonials = () => {
   return (
     <div className="noise-bg min-h-screen bg-background text-foreground transition-colors duration-500">
       <Helmet>
-        <title>Student Success Stories | Let's Study MS</title>
+        <title>Student Success Stories & Results | Let's Study MS</title>
         <meta name="description" content="Real success stories from Let's Study MS students. Alumni secured IIT JAM AIR 37, CSIR NET AIR 6, joined ISI, TIFR, IIT Bombay, IISER & PhD programs in USA." />
         <link rel="canonical" href="https://letsstudyms.com/testimonials" />
-        <meta property="og:title" content="Student Success Stories | Let's Study MS" />
+        <meta property="og:title" content="Student Success Stories & Results | Let's Study MS" />
         <meta property="og:description" content="Alumni achievements: IIT JAM AIR 37, CSIR NET AIR 6, GATE AIR 25. Students at ISI, IISc, TIFR, HRI, IIT Bombay, and international universities." />
         <meta property="og:url" content="https://letsstudyms.com/testimonials" />
         <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />

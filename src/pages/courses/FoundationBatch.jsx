@@ -310,7 +310,7 @@ const FoundationBatch = () => {
     <div className="noise-bg min-h-screen bg-background text-foreground transition-colors duration-500">
       <Helmet>
         <title>Foundation Batch | BSc Maths Coaching West Bengal</title>
-        <meta name="description" content="Foundation Batch at Let's Study MS — university-specific curriculum for Jadavpur, Calcutta, St. Xavier's & Presidency BSc students. Build world-class math foundations." />
+        <meta name="description" content="Foundation Batch at Let's Study MS: Syllabus-aligned curriculum for Jadavpur, Calcutta, St. Xavier's & Presidency BSc students. Build strong math foundations." />
         <link rel="canonical" href="https://letsstudyms.com/courses/foundation-batch" />
         <meta property="og:title" content="Foundation Batch | BSc Maths Coaching West Bengal" />
         <meta property="og:description" content="University-specific math coaching for Jadavpur, Calcutta, St. Xavier's & Presidency University students. Build a world-class mathematical foundation." />
@@ -365,7 +365,7 @@ const FoundationBatch = () => {
 
             <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="relative group">
                <div className="absolute -inset-4 bg-primary/20 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700" />
-               <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Students learning mathematics" src="https://images.unsplash.com/photo-1561089489-f13d5e730d72" />
+               <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Undergraduate students learning foundational mathematics at Let's Study MS" loading="lazy" src="https://images.unsplash.com/photo-1561089489-f13d5e730d72" />
             </motion.div>
           </div>
         </div>

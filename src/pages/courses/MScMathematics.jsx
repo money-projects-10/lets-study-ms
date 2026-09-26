@@ -257,16 +257,16 @@ const MScMathematics = () => {
   return (
     <div className="noise-bg min-h-screen bg-background text-foreground transition-colors duration-500">
       <Helmet>
-        <title>MSc Maths Entrance Coaching | IIT JAM TIFR ISI</title>
-        <meta name="description" content="Top MSc Mathematics entrance coaching in West Bengal. Prepare for IIT JAM, TIFR, ISI MMath, NBHM & CMI. Faculty from IIT Kanpur & ISI Kolkata." />
+        <title>MSc Maths Entrance Coaching | IIT JAM, TIFR & ISI</title>
+        <meta name="description" content="Top MSc Mathematics entrance coaching in West Bengal. Prepare for IIT JAM, TIFR, ISI MMath, NBHM & CMI. Learn from faculty from IIT Kanpur and ISI Kolkata." />
         <link rel="canonical" href="https://letsstudyms.com/courses/msc-mathematics" />
-        <meta property="og:title" content="MSc Maths Entrance Coaching | IIT JAM TIFR ISI NBHM" />
+        <meta property="og:title" content="MSc Maths Entrance Coaching | IIT JAM, TIFR & ISI" />
         <meta property="og:description" content="Comprehensive coaching for IIT JAM, TIFR, ISI MMath, NBHM and CMI entrance exams. Expert faculty from IIT Kanpur and ISI Kolkata." />
         <meta property="og:url" content="https://letsstudyms.com/courses/msc-mathematics" />
         <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="MSc Maths Entrance Coaching | IIT JAM TIFR ISI NBHM" />
+        <meta name="twitter:title" content="MSc Maths Entrance Coaching | IIT JAM, TIFR & ISI" />
         <meta name="twitter:description" content="Expert coaching for IIT JAM, TIFR, ISI MMath, NBHM and CMI in West Bengal. Proven results." />
         <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
         <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsstudyms.com/"},{"@type":"ListItem","position":2,"name":"MSc Mathematics","item":"https://letsstudyms.com/courses/msc-mathematics"}]})}</script>
@@ -312,7 +312,7 @@ const MScMathematics = () => {
 
             <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="relative group">
                <div className="absolute -inset-4 bg-primary/20 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700" />
-               <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Research mathematics" src="https://i.postimg.cc/rmDD3mmr/pexels_ian_panelo_3729557.jpg" />
+               <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="MSc Mathematics entrance exam preparation for IIT JAM, TIFR and ISI" loading="lazy" src="https://i.postimg.cc/rmDD3mmr/pexels_ian_panelo_3729557.jpg" />
             </motion.div>
           </div>
         </div>

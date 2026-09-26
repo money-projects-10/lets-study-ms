@@ -220,7 +220,7 @@ const SemesterBatch = () => {
 
             <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="relative group">
               <div className="absolute -inset-4 bg-primary/20 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700" />
-              <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Students learning" src="https://i.postimg.cc/rpb1yX5v/pexels_karola_g_6256066.jpg" />
+              <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Students preparing for university mathematics semester exams at Let's Study MS" loading="lazy" src="https://i.postimg.cc/rpb1yX5v/pexels_karola_g_6256066.jpg" />
             </motion.div>
           </div>
         </div>
