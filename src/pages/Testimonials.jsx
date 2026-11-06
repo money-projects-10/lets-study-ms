@@ -145,12 +145,12 @@ const Testimonials = () => {
         <meta property="og:title" content="Student Success Stories & Results | Let's Study MS" />
         <meta property="og:description" content="Alumni achievements: IIT JAM AIR 37, CSIR NET AIR 6, GATE AIR 25. Students at ISI, IISc, TIFR, HRI, IIT Bombay, and international universities." />
         <meta property="og:url" content="https://letsstudyms.com/testimonials" />
-        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Student Success Stories | Let's Study MS" />
         <meta name="twitter:description" content="Alumni at IIT, ISI, IISc, TIFR, HRI and international universities. See real results from West Bengal's top maths institute." />
-        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta name="twitter:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://letsstudyms.com/" }, { "@type": "ListItem", "position": 2, "name": "Testimonials", "item": "https://letsstudyms.com/testimonials" }] })}</script>
       </Helmet>
 
@@ -160,7 +160,7 @@ const Testimonials = () => {
       <section className="relative py-24 px-4 overflow-hidden border-b border-border">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gold/15 rounded-full blur-[80px]" />
         </div>
 
         <div className="container mx-auto text-center relative z-10">

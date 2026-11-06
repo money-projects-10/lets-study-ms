@@ -85,12 +85,12 @@ const ContactUs = () => {
         <meta property="og:title" content="Contact Let's Study MS | Mathematics Coaching Enquiry" />
         <meta property="og:description" content="Reach out for coaching enquiries. BSc foundation, MSc entrance, PhD prep and more. Call +91 8777484102 or visit us in Khardaha, Kolkata." />
         <meta property="og:url" content="https://letsstudyms.com/contact" />
-        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact Let's Study MS | Mathematics Coaching Enquiry" />
         <meta name="twitter:description" content="Enquire about mathematics coaching in West Bengal. Call, email, or visit us in Khardaha, Kolkata." />
-        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta name="twitter:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://letsstudyms.com/" }, { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://letsstudyms.com/contact" }] })}</script>
       </Helmet>
 
@@ -99,7 +99,7 @@ const ContactUs = () => {
       <section className="relative py-24 px-4 overflow-hidden border-b border-border">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gold/15 rounded-full blur-[80px]" />
         </div>
 
         <div className="container mx-auto text-center relative z-10">

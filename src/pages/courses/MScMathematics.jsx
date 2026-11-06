@@ -263,12 +263,12 @@ const MScMathematics = () => {
         <meta property="og:title" content="MSc Maths Entrance Coaching | IIT JAM, TIFR & ISI" />
         <meta property="og:description" content="Comprehensive coaching for IIT JAM, TIFR, ISI MMath, NBHM and CMI entrance exams. Expert faculty from IIT Kanpur and ISI Kolkata." />
         <meta property="og:url" content="https://letsstudyms.com/courses/msc-mathematics" />
-        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="MSc Maths Entrance Coaching | IIT JAM, TIFR & ISI" />
         <meta name="twitter:description" content="Expert coaching for IIT JAM, TIFR, ISI MMath, NBHM and CMI in West Bengal. Proven results." />
-        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta name="twitter:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsstudyms.com/"},{"@type":"ListItem","position":2,"name":"MSc Mathematics","item":"https://letsstudyms.com/courses/msc-mathematics"}]})}</script>
       </Helmet>
 

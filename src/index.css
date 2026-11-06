@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,51 +6,74 @@
 
 @layer base {
   :root {
-    /* Premium Light Mode - "Ocean Azure" */
-    --background: 210 20% 98%;
-    --foreground: 224 71% 4%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
-    --primary: 198 100% 24%; /* This is #005479 */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 47% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 198 100% 24%;
+    /* Light Mode - "Ivory & Emerald" (from the Let's Study badge) */
+    --background: 42 38% 97%;          /* warm ivory */
+    --foreground: 165 45% 9%;          /* green-black ink */
+    --card: 40 50% 99%;
+    --card-foreground: 165 45% 9%;
+    --popover: 40 50% 99%;
+    --popover-foreground: 165 45% 9%;
+    --primary: 166 68% 15%;            /* badge green #0C4136 */
+    --primary-foreground: 44 70% 92%;  /* cream */
+    --secondary: 42 40% 92%;
+    --secondary-foreground: 166 55% 13%;
+    --muted: 42 30% 93%;
+    --muted-foreground: 165 12% 36%;
+    --accent: 43 70% 90%;              /* pale gold wash */
+    --accent-foreground: 166 68% 15%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 44 70% 96%;
+    --border: 40 25% 85%;
+    --input: 40 25% 85%;
+    --ring: 42 65% 48%;
+    --gold: 42 65% 50%;                /* rim gold #D2A23A */
+    --gold-light: 46 80% 74%;          /* highlight #F2D98A */
+    --gold-foreground: 166 68% 12%;
     --radius: 0.75rem;
   }
 
   .dark {
-    /* Premium Dark Mode - "Deep Ocean" */
-    --background: 224 71% 4%;
-    --foreground: 210 40% 98%;
-    --card: 224 71% 6%;
-    --card-foreground: 210 40% 98%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 95%; /* Whitish Azure */
-    --primary-foreground: 224 71% 4%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 210 40% 95%;
+    /* Dark Mode - "Midnight Emerald" with gold as the lead colour */
+    --background: 166 55% 5%;
+    --foreground: 44 40% 93%;
+    --card: 166 45% 8%;
+    --card-foreground: 44 40% 93%;
+    --popover: 166 50% 6%;
+    --popover-foreground: 44 40% 93%;
+    --primary: 43 68% 62%;             /* gold */
+    --primary-foreground: 166 68% 8%;
+    --secondary: 166 32% 13%;
+    --secondary-foreground: 44 40% 93%;
+    --muted: 166 30% 13%;
+    --muted-foreground: 160 10% 66%;
+    --accent: 166 32% 15%;
+    --accent-foreground: 44 60% 85%;
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 44 40% 96%;
+    --border: 166 25% 17%;
+    --input: 166 25% 17%;
+    --ring: 43 68% 62%;
+    --gold: 43 68% 62%;
+    --gold-light: 46 85% 80%;
+    --gold-foreground: 166 68% 8%;
   }
+}
+
+@layer base {
+  h1, h2, h3, .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Gold ornament divider, echoing the badge rim */
+.gold-rule {
+  @apply h-px bg-gradient-to-r from-transparent via-gold to-transparent;
+}
+
+/* Thin gold edge for highlighted cards */
+.gold-edge {
+  box-shadow: inset 0 0 0 1px hsl(var(--gold) / 0.35), 0 20px 40px -24px hsl(var(--primary) / 0.35);
 }
 
 @layer base {
@@ -88,7 +111,7 @@
 
 /* Custom Cursor */
 .cursor-dot {
-  @apply fixed w-2 h-2 bg-primary rounded-full pointer-events-none z-[999] shadow-[0_0_10px_rgba(var(--primary),0.5)];
+  @apply fixed w-2 h-2 bg-primary rounded-full pointer-events-none z-[999] shadow-[0_0_10px_hsl(var(--gold)/0.5)];
   transition: transform 0.15s ease-out;
 }
 
@@ -115,12 +138,12 @@
 
 /* Shimmer Text */
 .shimmer-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-primary bg-[length:300%_auto];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-gold to-primary bg-[length:300%_auto];
   animation: shimmer 5s linear infinite;
 }
 
 .dark .shimmer-text {
-  @apply bg-gradient-to-r from-secondary via-primary to-secondary;
+  @apply bg-gradient-to-r from-gold via-gold-light to-gold;
 }
 
 @keyframes shimmer {

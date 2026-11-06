@@ -170,12 +170,12 @@ const SemesterBatch = () => {
         <meta property="og:title" content="Semester Batch | Maths Exam Coaching West Bengal" />
         <meta property="og:description" content="Targeted semester exam coaching for West Bengal universities. Syllabus-aligned preparation, weekly mocks, and expert guidance from ISI and IIT alumni." />
         <meta property="og:url" content="https://letsstudyms.com/courses/semester-batch" />
-        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Semester Batch | Maths Exam Coaching West Bengal" />
         <meta name="twitter:description" content="Semester exam coaching for Jadavpur, Calcutta, Xavier's & Presidency. Syllabus-focused, expert-led classes." />
-        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta name="twitter:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsstudyms.com/"},{"@type":"ListItem","position":2,"name":"Semester Batch","item":"https://letsstudyms.com/courses/semester-batch"}]})}</script>
       </Helmet>
 
@@ -185,7 +185,7 @@ const SemesterBatch = () => {
       <section className="relative py-24 px-4 overflow-hidden border-b border-border">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gold/15 rounded-full blur-[80px]" />
         </div>
 
         <div className="container mx-auto text-center relative z-10">

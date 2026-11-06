@@ -102,37 +102,52 @@ For EVERY page (Home, Testimonials, Contact, all 7 course pages):
 
 ---
 
-## Last Audit: 2026-09-22 (September 2026)
+## Last Audit: 2026-11-06 (November 2026)
 
 ### Changes Made:
-- **Root SEO (`index.html`)**:
-  - Optimized root `<title>` to 55 chars (`Let's Study MS | Top Mathematics Institute West Bengal`).
-  - Optimized `<meta name="description">` to 155 chars.
-  - Enhanced `EducationalOrganization` JSON-LD schema with complete contact telephone array and official social links (`sameAs`).
-- **Header & Footer Components**:
-  - Replaced generic `alt="Logo"` with descriptive `alt="Let's Study MS - School of Mathematics Logo"` across `Header.jsx` and `Footer.jsx`.
-- **Page Titles & Meta Descriptions**:
-  - Optimized title and meta description character lengths across Home, Testimonials, Contact, and all 7 Course pages to strictly meet the 50-60 char and 150-160 char requirements.
-- **Login / Study Repository Page (`Login.jsx`)**:
-  - Added complete Helmet metadata including canonical URL, OpenGraph tags, Twitter cards, and `BreadcrumbList` schema.
-- **Images & Performance**:
-  - Added `loading="lazy"` and descriptive keyword-rich `alt` text to below-the-fold images across all 7 course pages and Home illustration.
-- **Sitemap (`public/sitemap.xml`)**:
-  - Refreshed all route `<lastmod>` timestamps to `2026-09-22`.
-- **AI Search / GEO & Technical SEO**:
-  - Verified `robots.txt` AI crawler allowances (`GPTBot`, `ClaudeBot`, `PerplexityBot`), `llms.txt`, `.htaccess` SPA routing rules, and 404 `noindex, nofollow` behavior.
+- **Logo Redesign & Branding**:
+  - Updated favicon and apple-touch-icon to new emerald & gold badge logo.
+  - Updated JSON-LD EducationalOrganization schema logo URL to `https://letsstudyms.com/images/logo-full.jpg`.
+  - Updated all social share OG/Twitter image URLs from postimg.cc to hosted logo.
+  - Updated header, footer, and hero sections with new transparent badge logo.
+  - Added theme-color meta tags for light/dark mode browser UI.
+- **November Exam Season Optimization**:
+  - Updated meta description with "November exam preparation" messaging (154 chars).
+  - Enhanced keywords to include seasonal context: "november exam preparation" and entrance exam focus.
+  - Updated OG description to highlight exam season relevance.
+- **Sitemap & Technical**:
+  - Updated all `<lastmod>` dates to `2026-11-06` across all 10 pages.
+  - Verified canonical URLs and OG tags point to new logo assets.
+  - Confirmed `robots.txt`, `llms.txt`, and `.htaccess` remain valid.
+- **Font & Color System**:
+  - Added Playfair Display serif font for headings (legacy: Outfit sans-serif).
+  - Converted blue-based theme to emerald green (#0C4136) and gold (#D2A23A) palette.
+  - Updated CSS variables for semantic color tokens (primary, gold, gold-light, gold-foreground).
+  - Verified all 17 modified component files compile and render correctly.
 - **Verification**:
-  - Successfully verified production build with 0 errors.
+  - Production build passes with 0 errors.
+  - All pages render with new logo, colors, and November messaging.
 
 ---
 
-## Audit History: 2026-05-13
-- Removed FAQPage schema from index.html (restricted to gov/health)
-- Updated sitemap.xml dates and removed `<priority>` tags
-- Added AI crawler directives to robots.txt
+## Audit History
+
+### 2026-09-22 (September Audit)
+- Optimized root title to 55 chars with primary keyword
+- Enhanced EducationalOrganization JSON-LD schema
+- Replaced generic alt text with descriptive keywords
+- Optimized all page titles and descriptions to 50-60 / 150-160 char standards
+- Added complete Helmet metadata to Login page
+- Added lazy loading and keyword-rich alt text to all course pages
+- Verified AI crawler allowances and .htaccess routing
+
+### 2026-05-13 (Initial Audit)
+- Removed FAQPage schema (restricted to gov/health as of Aug 2023)
+- Updated sitemap and removed `<priority>` tags
+- Added AI crawler directives (GPTBot, ClaudeBot, PerplexityBot)
 - Created llms.txt for AI search visibility
-- Added OG/Twitter tags to Testimonials and Contact pages
-- Added catch-all 404 route to App.jsx
+- Added OG/Twitter tags to all pages
+- Added catch-all 404 route
 - Improved image alt text on logo
-- Added BreadcrumbList schema to Testimonials page
+- Added BreadcrumbList schema to Testimonials
 

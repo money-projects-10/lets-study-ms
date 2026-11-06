@@ -64,11 +64,20 @@ const Footer = () => {
           {/* Brand Info */}
           <motion.div variants={fadeInUp} className="md:col-span-4 space-y-8">
             <Link to="/" onClick={() => window.scrollTo(0,0)} className="inline-block group">
-              <img
-                src="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg"
-                alt="Let's Study MS - School of Mathematics Logo"
-                className="h-20 w-auto rounded-2xl p-2 bg-background border border-border shadow-2xl transition-transform group-hover:rotate-2"
-              />
+              <span className="flex items-center gap-4">
+                <img
+                  src="/images/logo-badge.png"
+                  alt="Let's Study MS - School of Mathematics Logo"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                  className="h-20 w-20 rounded-full ring-2 ring-gold/40 shadow-2xl transition-transform group-hover:rotate-[8deg]"
+                />
+                <span className="flex flex-col leading-tight">
+                  <span className="font-display font-black text-2xl text-primary">LET'S STUDY</span>
+                  <span className="font-display italic text-gold">School of Mathematics</span>
+                </span>
+              </span>
             </Link>
             <p className="text-muted-foreground text-base leading-relaxed max-w-sm">
               One of West Bengal's leading mathematical institutes, dedicated to nurturing analytical brilliance through expert mentorship.

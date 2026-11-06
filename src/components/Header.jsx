@@ -41,12 +41,18 @@ const Header = () => {
   return (
     <header className={`dynamic-island ${scrolled ? 'w-[95%] md:w-[85%] scale-[0.98]' : 'w-[90%] md:w-[80%]'} border border-border/50 bg-card/60 backdrop-blur-2xl transition-all duration-700`}>
       <div className="container mx-auto flex items-center justify-between h-14 md:h-16 px-6">
-        <Link to="/" className="flex items-center group">
+        <Link to="/" className="flex items-center gap-3 group">
           <img
-            src="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg"
+            src="/images/logo-badge.png"
             alt="Let's Study MS - School of Mathematics Logo"
-            className="h-10 w-auto rounded-xl ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all duration-500"
+            width="44"
+            height="44"
+            className="h-10 w-10 md:h-11 md:w-11 rounded-full ring-2 ring-gold/40 group-hover:ring-gold shadow-md transition-all duration-500 group-hover:rotate-[8deg]"
           />
+          <span className="hidden sm:flex flex-col leading-none">
+            <span className="font-display font-bold text-base md:text-lg text-primary tracking-wide">LET'S STUDY</span>
+            <span className="font-display italic text-[11px] md:text-xs text-gold mt-0.5">School of Mathematics</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

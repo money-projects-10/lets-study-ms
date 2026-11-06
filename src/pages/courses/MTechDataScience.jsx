@@ -481,12 +481,12 @@ const MTechDataScience = () => {
         <meta property="og:title" content="MTech Data Science & Economics Coaching West Bengal" />
         <meta property="og:description" content="Coaching for ISI MTech, GATE Data Science, CMI/RKMVERI Data Science and MSc Economics entrance exams. Mentors from ISI and IIT." />
         <meta property="og:url" content="https://letsstudyms.com/courses/mtech-datascience" />
-        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="MTech Data Science & Economics Coaching West Bengal" />
         <meta name="twitter:description" content="Coaching for ISI MTech, GATE DA, CMI Data Science, and MSc Economics entrance exams by ISI and IIT alumni." />
-        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta name="twitter:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsstudyms.com/"},{"@type":"ListItem","position":2,"name":"MTech/Data Science","item":"https://letsstudyms.com/courses/mtech-datascience"}]})}</script>
       </Helmet>
 

@@ -28,7 +28,7 @@ const AmbientBackground = () => {
       {symbols.map((sym, i) => (
         <span
           key={i}
-          className={`absolute ${sym.size} font-serif text-brand-teal dark:text-[#78E2FF] transition-opacity duration-500`}
+          className={`absolute ${sym.size} font-serif text-primary dark:text-gold transition-opacity duration-500`}
           style={{
             top: sym.top,
             left: sym.left,

@@ -315,12 +315,12 @@ const FoundationBatch = () => {
         <meta property="og:title" content="Foundation Batch | BSc Maths Coaching West Bengal" />
         <meta property="og:description" content="University-specific math coaching for Jadavpur, Calcutta, St. Xavier's & Presidency University students. Build a world-class mathematical foundation." />
         <meta property="og:url" content="https://letsstudyms.com/courses/foundation-batch" />
-        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Foundation Batch | BSc Maths Coaching West Bengal" />
         <meta name="twitter:description" content="University-specific math coaching for West Bengal BSc students. Build world-class foundations from faculty at IITs and ISI." />
-        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta name="twitter:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsstudyms.com/"},{"@type":"ListItem","position":2,"name":"Foundation Batch","item":"https://letsstudyms.com/courses/foundation-batch"}]})}</script>
       </Helmet>
 

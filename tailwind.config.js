@@ -50,6 +50,14 @@ module.exports = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
+				gold: {
+					DEFAULT: 'hsl(var(--gold) / <alpha-value>)',
+					light: 'hsl(var(--gold-light) / <alpha-value>)',
+					foreground: 'hsl(var(--gold-foreground) / <alpha-value>)',
+				},
+			},
+			fontFamily: {
+				display: ['"Playfair Display"', 'Georgia', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

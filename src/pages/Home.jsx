@@ -63,56 +63,56 @@ const Home = () => {
       title: 'Foundation Batch',
       description: 'Build strong mathematical fundamentals for undergraduate studies',
       icon: BookOpen,
-      color: '#0F5A7A',
+      color: '#0C4136',
       path: '/courses/foundation-batch'
     },
     {
       title: 'Semester Batch',
       description: 'Excel in your semester exams with targeted preparation',
       icon: GraduationCap,
-      color: '#0d4a63',
+      color: '#B8862B',
       path: '/courses/semester-batch'
     },
     {
       title: 'M.Sc Mathematics Entrances',
       description: 'Master entrance exams for top mathematics programs',
       icon: Brain,
-      color: '#0F5A7A',
+      color: '#0C4136',
       path: '/courses/msc-mathematics'
     },
     {
       title: 'M.Tech/Data Science/M.Sc Economics',
       description: 'Specialized preparation for interdisciplinary programs',
       icon: TrendingUp,
-      color: '#0d4a63',
+      color: '#B8862B',
       path: '/courses/mtech-datascience'
     },
     {
       title: 'Engineering Mathematics',
       description: 'Comprehensive engineering mathematics for all branches',
       icon: Award,
-      color: '#0F5A7A',
+      color: '#0C4136',
       path: '/courses/engineering-mathematics'
     },
     {
       title: 'PhD Entrances',
       description: 'Advanced preparation for doctoral program admissions',
       icon: Trophy,
-      color: '#0d4a63',
+      color: '#B8862B',
       path: '/courses/phd-entrances'
     },
     {
       title: 'Advanced Courses',
       description: 'Specialized topics for research and competitive excellence',
       icon: Target,
-      color: '#0F5A7A',
+      color: '#0C4136',
       path: '/courses/advanced-courses'
     },
     {
       title: 'Personalized Coaching',
       description: 'One-on-one mentorship tailored to your specific needs',
       icon: Users,
-      color: '#0d4a63',
+      color: '#B8862B',
       path: '/contact'
     }
   ];
@@ -348,11 +348,11 @@ const Home = () => {
         <meta property="og:title" content="Let's Study MS | Top Math Institute in West Bengal" />
         <meta property="og:description" content="Top mathematics institute in West Bengal for higher education. Expert coaching for IIT JAM, MSc Entrances, TIFR, ISI & PhD. Faculty from IIT, ISI & IISc." />
         <meta property="og:url" content="https://letsstudyms.com/" />
-        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Let's Study MS | Top Math Institute in West Bengal" />
         <meta name="twitter:description" content="Top math institute in West Bengal for higher education. Expert coaching for IIT JAM, MSc Entrances, TIFR, ISI, & PhD." />
-        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta name="twitter:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://letsstudyms.com/" }, { "@type": "ListItem", "position": 2, "name": "Courses", "item": "https://letsstudyms.com/#courses" }, { "@type": "ListItem", "position": 3, "name": "Contact", "item": "https://letsstudyms.com/contact" }] })}</script>
       </Helmet>
 
@@ -363,8 +363,8 @@ const Home = () => {
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px]" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/15 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px]" />
         </div>
 
         {/* Floating Math Symbols */}
@@ -387,24 +387,16 @@ const Home = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
           >
-            <div className="relative inline-block mb-10 group">
-              <div className="absolute -inset-4 bg-primary/20 rounded-[2.5rem] blur-2xl group-hover:bg-primary/30 transition-all duration-700 opacity-50" />
-              <img
-                src="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg"
-                alt="Let's Study MS School of Mathematics Logo - Premier Mathematics Institute West Bengal"
-                className="h-32 md:h-40 w-auto mx-auto relative z-10 rounded-3xl p-2 bg-background border border-border shadow-2xl transform transition-transform group-hover:rotate-2"
-              />
-            </div>
-
             <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
               LET'S <span className="shimmer-text pr-2">STUDY </span> MS
             </h1>
 
-            <div className="flex items-center justify-center space-x-4 mb-4">
-              <div className="h-[1px] w-12 bg-primary/50" />
-              <p className="text-2xl md:text-3xl font-light tracking-[0.2em] uppercase">School of Mathematics</p>
-              <div className="h-[1px] w-12 bg-primary/50" />
+            <div className="flex items-center justify-center space-x-4 mb-4 mt-8">
+              <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-gold" />
+              <p className="font-display italic text-2xl md:text-4xl text-foreground/90">School of Mathematics</p>
+              <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-gold" />
             </div>
+            <p className="text-gold text-lg tracking-[0.6em] mb-2" aria-hidden="true">★ ★ ★</p>
 
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -692,11 +684,11 @@ const Home = () => {
       </section>
 
       {/* Final Year Target Badge */}
-      <div className="mt-12 mb-24 bg-gradient-to-r from-[#0d4a63] to-[#0F5A7A] p-8 text-white text-center shadow-lg">
+      <div className="relative mt-12 mb-24 bg-gradient-to-r from-[#072B24] via-[#0C4136] to-[#072B24] p-8 text-[#F6EBC8] text-center shadow-lg border-y border-gold/50">
         <div className="flex justify-center mb-4">
-          <Award size={40} className="text-yellow-400" />
+          <Award size={40} className="text-gold-light" />
         </div>
-        <p className="text-white px-4 md:px-12 leading-relaxed">
+        <p className="font-display italic text-lg md:text-xl px-4 md:px-12 leading-relaxed">
           You will never prepare alone - at every step, an exam expert stands with you, <br />
           guiding, correcting, and strengthening your journey until success.
         </p>

@@ -137,12 +137,12 @@ const PhDEntrances = () => {
         <meta property="og:title" content="PhD Maths Entrance Coaching West Bengal | TIFR CSIR" />
         <meta property="og:description" content="Advanced PhD entrance prep for TIFR, IIT, IISc, HRI and CSIR NET. Expert faculty with first-hand experience cracking India's top doctoral programs." />
         <meta property="og:url" content="https://letsstudyms.com/courses/phd-entrances" />
-        <meta property="og:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta property="og:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="PhD Maths Entrance Coaching West Bengal | TIFR CSIR" />
         <meta name="twitter:description" content="Coaching for TIFR, IIT PhD, IISc, HRI and CSIR NET. Expert mentors from India's top math institutes." />
-        <meta name="twitter:image" content="https://i.postimg.cc/SR35cFPJ/Lets_Study_Logo.jpg" />
+        <meta name="twitter:image" content="https://letsstudyms.com/images/logo-full.jpg" />
         <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsstudyms.com/"},{"@type":"ListItem","position":2,"name":"PhD Entrances","item":"https://letsstudyms.com/courses/phd-entrances"}]})}</script>
       </Helmet>
 
