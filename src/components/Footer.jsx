@@ -85,7 +85,7 @@ const Footer = () => {
             <div className="flex space-x-5">
               {[
                 { icon: Facebook, url: 'https://www.facebook.com/profile.php?id=61584835031140' },
-                { icon: Instagram, url: 'https://www.instagram.com/ls2m_maths?utm_source=qr' },
+                { icon: Instagram, url: 'https://www.instagram.com/the.ls2m?dlrf=MW9ocHp4YWIzdGdlMw==' },
                 { icon: Linkedin, url: 'https://www.linkedin.com/in/let-s-study-school-of-mathematics-3443073a4/' },
                 { icon: Youtube, url: 'https://youtube.com/@letsstudysom' },
                 { icon: Send, url: 'https://t.me/LetsstudySOM' }
