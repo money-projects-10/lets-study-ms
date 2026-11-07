@@ -19,11 +19,10 @@ import ScrollProgress from '@/components/ScrollProgress';
 import { AnimatePresence } from 'framer-motion';
 
 function App() {
+  // Light mode only: clear any dark-mode choice saved by the old theme toggle
   useEffect(() => {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
+    document.documentElement.classList.remove('dark');
+    try { localStorage.removeItem('theme'); } catch { /* storage unavailable */ }
   }, []);
 
   return (

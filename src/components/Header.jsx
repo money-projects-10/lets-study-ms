@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,23 +39,23 @@ const Header = () => {
 
   return (
     <header className={`dynamic-island ${scrolled ? 'w-[95%] md:w-[85%] scale-[0.98]' : 'w-[90%] md:w-[80%]'} border border-border/50 bg-card/60 backdrop-blur-2xl transition-all duration-700`}>
-      <div className="container mx-auto flex items-center justify-between h-14 md:h-16 px-6">
-        <Link to="/" className="flex items-center gap-3 group">
+      <div className="container mx-auto flex items-center justify-between h-11 md:h-12 px-4">
+        <Link to="/" className="flex items-center gap-2.5 group">
           <img
             src="/images/logo-badge.png"
             alt="Let's Study MS - School of Mathematics Logo"
-            width="44"
-            height="44"
-            className="h-10 w-10 md:h-11 md:w-11 rounded-full ring-2 ring-gold/40 group-hover:ring-gold shadow-md transition-all duration-500 group-hover:rotate-[8deg]"
+            width="34"
+            height="34"
+            className="h-8 w-8 md:h-[34px] md:w-[34px] rounded-full ring-2 ring-gold/40 group-hover:ring-gold shadow-sm transition-all duration-500 group-hover:rotate-[8deg]"
           />
           <span className="hidden sm:flex flex-col leading-none">
-            <span className="font-display font-bold text-base md:text-lg text-primary tracking-wide">LET'S STUDY</span>
-            <span className="font-display italic text-[11px] md:text-xs text-gold mt-0.5">School of Mathematics</span>
+            <span className="font-display font-bold text-sm md:text-[15px] text-primary tracking-wide">LET'S STUDY</span>
+            <span className="font-accent italic text-[10px] md:text-[11px] text-gold mt-0.5">School of Mathematics</span>
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center bg-primary/5 px-6 py-2 rounded-2xl border border-primary/10">
+        <nav className="hidden lg:flex items-center bg-primary/5 px-3 py-1 rounded-full border border-primary/10">
           {navItems.map((item, index) => (
             <React.Fragment key={index}>
               {item.path ? (
@@ -78,12 +77,10 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex items-center space-x-2">
-          <ThemeToggle />
-          
+        <div className="flex items-center lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-3 hover:bg-primary/10 rounded-2xl transition-all active:scale-90 focus:outline-none"
+            className="lg:hidden p-2 hover:bg-primary/10 rounded-full transition-all active:scale-90 focus:outline-none"
           >
             {mobileMenuOpen ? <X size={20} className="text-primary" /> : <Menu size={20} className="text-foreground" />}
           </button>

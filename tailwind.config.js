@@ -54,10 +54,13 @@ module.exports = {
 					DEFAULT: 'hsl(var(--gold) / <alpha-value>)',
 					light: 'hsl(var(--gold-light) / <alpha-value>)',
 					foreground: 'hsl(var(--gold-foreground) / <alpha-value>)',
+					ink: 'hsl(var(--gold-ink) / <alpha-value>)',
 				},
 			},
 			fontFamily: {
-				display: ['"Playfair Display"', 'Georgia', 'serif'],
+				display: ['Outfit', 'system-ui', 'sans-serif'],
+				accent: ['"Playfair Display"', 'Georgia', 'serif'],
+				quote: ['"Cormorant Garamond"', 'Georgia', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

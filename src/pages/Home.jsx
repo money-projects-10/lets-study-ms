@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Users, Award, TrendingUp,
-  GraduationCap, Brain, Trophy, Target, Quote, ExternalLink, ArrowRight
+  GraduationCap, Brain, Trophy, Target, Quote, ExternalLink, ArrowRight, ArrowUpRight
 } from 'lucide-react';
 
 import Header from '@/components/Header';
@@ -12,6 +12,7 @@ import Footer from '@/components/Footer';
 
 const Home = () => {
   const { hash } = useLocation();
+  const [activeStudent, setActiveStudent] = useState(0);
 
   // FIX INTERNAL ANCHOR SCROLLING
   useEffect(() => {
@@ -338,6 +339,8 @@ const Home = () => {
     { icon: '∆', top: '10%', left: '90%', delay: 2.5 },
   ];
 
+  const student = testimonials[activeStudent];
+
   return (
     <div className="noise-bg min-h-screen bg-background text-foreground transition-colors duration-500 overflow-x-hidden">
       <Helmet>
@@ -393,7 +396,7 @@ const Home = () => {
 
             <div className="flex items-center justify-center space-x-4 mb-4 mt-8">
               <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-gold" />
-              <p className="font-display italic text-2xl md:text-4xl text-foreground/90">School of Mathematics</p>
+              <p className="font-accent italic text-2xl md:text-4xl text-foreground/90">School of Mathematics</p>
               <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-gold" />
             </div>
             <p className="text-gold text-lg tracking-[0.6em] mb-2" aria-hidden="true">★ ★ ★</p>
@@ -570,48 +573,82 @@ const Home = () => {
 
 
       {/* Success Stories Section */}
-      <section id="success-stories" className="py-20 bg-background scroll-mt-20">
+      <section id="success-stories" className="py-24 lg:py-32 bg-background scroll-mt-24">
         <div className="container mx-auto px-4">
-          <motion.h2 {...fadeInUp} className="text-4xl font-bold text-center text-primary mb-16">Success Stories</motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {testimonials.map((student, index) => (
-              <motion.div
-                key={index}
-                {...fadeInUp}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                className="cursor-pointer"
-              >
-                <Link to="/testimonials" onClick={() => window.scrollTo(0, 0)} className="block h-full">
-                  <div className="bg-card p-6 rounded-2xl shadow-xl border border-border flex flex-col items-center text-center group hover:border-primary transition-all h-full hover-lift">
-                    <div className="relative -mt-16 mb-4">
-                      <img src={student.image} alt={`${student.name} - ${student.achievement}`} loading="lazy" className="w-24 h-24 rounded-full border-4 border-card shadow-lg object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground">{student.name}</h3>
-                    <p className="text-primary text-[11px] font-bold uppercase tracking-tight mt-1">{student.achievement}</p>
-                    <p className="text-muted-foreground text-[10px] mb-4">{student.current}</p>
-                    <div className="relative italic text-muted-foreground text-sm">
-                      <Quote size={12} className="inline mr-1 opacity-20" /> {student.quote}
-                    </div>
-                  </div>
-
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div {...fadeInUp} className="mt-12 text-center">
-            <Link to="/testimonials" onClick={() => window.scrollTo(0, 0)}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-xl hover:bg-primary/90 transition-all"
-              >
-                Read Success Stories
-              </motion.button>
-            </Link>
+          <motion.div {...fadeInUp} className="mb-14">
+            <p className="text-xs uppercase tracking-widest font-bold text-gold-ink">Success Stories</p>
+            <h2 className="font-display font-black text-4xl md:text-5xl leading-[1.05] mt-3 text-foreground">Where our students are now.</h2>
           </motion.div>
+
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="order-2 lg:order-1 lg:col-span-4" role="tablist" aria-label="Students">
+              {testimonials.map((s, i) => {
+                const active = i === activeStudent;
+                return (
+                  <button
+                    key={s.name}
+                    role="tab"
+                    aria-selected={active}
+                    onClick={() => setActiveStudent(i)}
+                    className={`relative w-full text-left flex items-center gap-4 py-4 pl-5 border-b border-border transition-colors ${active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                  >
+                    <span className={`absolute left-0 top-3 bottom-3 w-[3px] transition-colors ${active ? 'bg-gold' : 'bg-transparent'}`} />
+                    <img
+                      src={s.image}
+                      alt=""
+                      loading="lazy"
+                      className={`w-12 h-12 object-cover rounded-sm transition-all ${active ? '' : 'grayscale opacity-70'}`}
+                    />
+                    <span>
+                      <span className="block font-display font-semibold text-lg leading-tight">{s.name}</span>
+                      <span className="block text-xs mt-1 text-muted-foreground">{s.current}</span>
+                    </span>
+                  </button>
+                );
+              })}
+              <Link
+                to="/testimonials"
+                onClick={() => window.scrollTo(0, 0)}
+                className="mt-8 inline-flex items-center gap-1.5 font-semibold text-foreground underline decoration-gold decoration-2 underline-offset-4 hover:decoration-foreground"
+              >
+                Read all success stories <ArrowUpRight size={16} />
+              </Link>
+            </div>
+
+            <div className="order-1 lg:order-2 lg:col-span-8" role="tabpanel">
+              <AnimatePresence mode="wait">
+                <motion.figure
+                  key={student.name}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.35 }}
+                  className="grid sm:grid-cols-[200px_1fr] gap-8 lg:gap-12 items-start"
+                >
+                  <div className="relative w-40 sm:w-full">
+                    <div className="absolute inset-0 translate-x-3 translate-y-3 border border-gold rounded-sm" aria-hidden="true" />
+                    <img
+                      src={student.image}
+                      alt={`${student.name} - ${student.achievement}`}
+                      loading="lazy"
+                      className="relative w-full aspect-[4/5] object-cover rounded-sm"
+                    />
+                  </div>
+                  <div>
+                    <Quote size={36} className="text-gold" strokeWidth={1.25} />
+                    <blockquote className="font-quote italic font-medium text-[1.75rem] sm:text-4xl lg:text-[2.85rem] leading-[1.2] mt-4 text-foreground">
+                      {student.quote}
+                    </blockquote>
+                    <figcaption className="mt-8 pt-6 border-t border-border">
+                      <p className="font-semibold text-foreground">{student.name}</p>
+                      <p className="text-[11px] uppercase tracking-widest font-bold text-gold-ink mt-2">{student.achievement}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{student.current}</p>
+                    </figcaption>
+                  </div>
+                </motion.figure>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -682,17 +719,6 @@ const Home = () => {
 
         </div>
       </section>
-
-      {/* Final Year Target Badge */}
-      <div className="relative mt-12 mb-24 bg-gradient-to-r from-[#072B24] via-[#0C4136] to-[#072B24] p-8 text-[#F6EBC8] text-center shadow-lg border-y border-gold/50">
-        <div className="flex justify-center mb-4">
-          <Award size={40} className="text-gold-light" />
-        </div>
-        <p className="font-display italic text-lg md:text-xl px-4 md:px-12 leading-relaxed">
-          You will never prepare alone - at every step, an exam expert stands with you, <br />
-          guiding, correcting, and strengthening your journey until success.
-        </p>
-      </div>
 
       <Footer />
     </div>
