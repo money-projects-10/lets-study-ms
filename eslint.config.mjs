@@ -4,7 +4,7 @@ import importPlugin from 'eslint-plugin-import';
 import globals from 'globals';
 
 export default [
-	{ ignores: ['node_modules/**', 'dist/**', 'build/**', 'vite.config.js'] },
+	{ ignores: ['node_modules/**', 'dist/**', 'dist-ssr/**', 'build/**', 'vite.config.js'] },
 	{
 		files: ['**/*.js', '**/*.jsx'],
 		plugins: { react, 'react-hooks': reactHooks, import: importPlugin },
@@ -28,6 +28,10 @@ export default [
 
 			// Non-critical rules - disabled since code works fine without them
 			'react/prop-types': 'off',
+			// WebMCP declarative form attributes (https://webmachinelearning.github.io/webmcp/)
+			'react/no-unknown-property': ['error', { ignore: ['toolname', 'tooldescription', 'toolparamdescription'] }],
+			// React Compiler style advice from react-hooks v7; existing effects work, so flag without failing
+			'react-hooks/set-state-in-effect': 'warn',
 			'react/no-unescaped-entities': 'off',
 			'react/display-name': 'off', // Non-critical, component works without displayName
 			'react/jsx-uses-react': 'off', // Not needed in React 17+, non-critical
@@ -49,5 +53,5 @@ export default [
 			'import/no-cycle': 'off', // AI rarely makes this error, and the rule is very slow to run
 		},
 	},
-	{ files: ['tools/**/*.js', 'tailwind.config.js'], languageOptions: { globals: globals.node } },
+	{ files: ['tools/**/*.js', 'tailwind.config.js', 'server.js', 'scripts/**/*.mjs', 'postcss.config.js'], languageOptions: { globals: globals.node } },
 ];
