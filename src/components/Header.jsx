@@ -80,7 +80,9 @@ const Header = () => {
         <div className="flex items-center lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 hover:bg-primary/10 rounded-full transition-all active:scale-90 focus:outline-none"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+            className="lg:hidden p-2.5 hover:bg-primary/10 rounded-full transition-all active:scale-90 focus:outline-none"
           >
             {mobileMenuOpen ? <X size={20} className="text-primary" /> : <Menu size={20} className="text-foreground" />}
           </button>
@@ -118,14 +120,14 @@ const Header = () => {
                   <Link
                     to={item.path}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`relative z-10 block py-3 px-5 transition-colors duration-300 font-black uppercase text-[10px] tracking-[0.25em] text-center ${hoveredIndex === index ? 'text-primary' : 'text-foreground/80'}`}
+                    className={`relative z-10 block py-3 px-5 transition-colors duration-300 font-black uppercase text-xs tracking-[0.2em] text-center ${hoveredIndex === index ? 'text-primary' : 'text-foreground/80'}`}
                   >
                     {item.label}
                   </Link>
                 ) : (
                   <button
                     onClick={item.action}
-                    className={`relative z-10 block w-full text-center py-3 px-5 transition-colors duration-300 font-black uppercase text-[10px] tracking-[0.25em] ${hoveredIndex === index ? 'text-primary' : 'text-foreground/80'}`}
+                    className={`relative z-10 block w-full text-center py-3 px-5 transition-colors duration-300 font-black uppercase text-xs tracking-[0.2em] ${hoveredIndex === index ? 'text-primary' : 'text-foreground/80'}`}
                   >
                     {item.label}
                   </button>
@@ -140,4 +142,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header;

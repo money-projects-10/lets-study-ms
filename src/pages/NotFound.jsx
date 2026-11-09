@@ -28,11 +28,11 @@ const NotFound = () => {
           transition={{ duration: 0.8 }}
           className="text-center max-w-2xl relative z-10"
         >
-          <div className="text-[12rem] font-black leading-none shimmer-text select-none tracking-tighter mb-8 bg-gradient-to-br from-primary to-primary/40 bg-clip-text text-transparent opacity-80">
+          <div className="text-[7rem] sm:text-[12rem] font-black leading-none shimmer-text select-none tracking-tighter mb-8 bg-gradient-to-br from-primary to-primary/40 bg-clip-text text-transparent opacity-80">
             404
           </div>
           
-          <h1 className="text-5xl font-black text-foreground mb-6 tracking-tight uppercase">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl break-words font-black text-foreground mb-6 tracking-tight uppercase">
             Coordinates Lost
           </h1>
           

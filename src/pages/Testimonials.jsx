@@ -168,7 +168,7 @@ const Testimonials = () => {
             <div className="w-20 h-20 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto mb-8 ring-1 ring-primary/20">
               <Trophy size={40} className="text-primary" />
             </div>
-            <h1 className="text-6xl font-black mb-6 shimmer-text tracking-tight uppercase">Hall of Fame</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl break-words font-black mb-6 shimmer-text tracking-tight uppercase">Hall of Fame</h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Celebrating the exceptional achievements of our students in the world's most prestigious mathematical institutions.
             </p>
@@ -224,7 +224,7 @@ const Testimonials = () => {
         <div className="absolute inset-0 opacity-10 noise-bg" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div {...fadeInUp}>
-            <h2 className="text-5xl font-black text-primary-foreground mb-8 tracking-tight">Want to be our next success story?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl break-words font-black text-primary-foreground mb-8 tracking-tight">Want to be our next success story?</h2>
             <p className="text-primary-foreground/80 text-xl mb-12 max-w-2xl mx-auto">
               Join our specialized batches and start your journey towards excellence in mathematics.
             </p>

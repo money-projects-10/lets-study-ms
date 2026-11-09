@@ -34,7 +34,7 @@ const Footer = () => {
   ];
 
   const heading = 'text-xs uppercase tracking-widest font-bold text-[#E9CF86] mb-5';
-  const link = 'text-[#EFE6CC]/70 hover:text-[#EFE6CC] transition-colors text-sm';
+  const link = 'inline-block py-1.5 text-[#EFE6CC]/70 hover:text-[#EFE6CC] transition-colors text-sm';
 
   return (
     <footer className="bg-[#051F1A] text-[#EFE6CC]">
@@ -115,7 +115,8 @@ const Footer = () => {
           {/* Explore */}
           <div className="md:col-span-2">
             <h4 className={heading}>Explore</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
+              <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className={link}>About Us</Link></li>
               <li><button onClick={() => handleScrollToSection('courses')} className={link}>Programmes</button></li>
               <li><Link to="/testimonials" onClick={() => window.scrollTo(0, 0)} className={link}>Success Stories</Link></li>
               <li><button onClick={() => handleScrollToSection('team')} className={link}>Mentors</button></li>
@@ -127,7 +128,7 @@ const Footer = () => {
           {/* Programmes */}
           <div className="md:col-span-3">
             <h4 className={heading}>Programmes</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {courses.map((c) => (
                 <li key={c.name}>
                   <Link to={c.path} onClick={() => window.scrollTo(0, 0)} className={link}>{c.name}</Link>
@@ -168,12 +169,20 @@ const Footer = () => {
         </p>
 
         <div className="pt-8 border-t border-[#EFE6CC]/15 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pr-20 md:pr-24">
-          <p className="text-[#EFE6CC]/50 text-xs">
-            © {new Date().getFullYear()} Let's Study MS - School of Mathematics. Dedicated to Analytical Brilliance.
-          </p>
+          <div className="flex flex-col gap-2">
+            <p className="text-[#EFE6CC]/50 text-xs">
+              © {new Date().getFullYear()} Let's Study MS - School of Mathematics. Dedicated to Analytical Brilliance.
+            </p>
+            <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
+              <Link to="/about" onClick={() => window.scrollTo(0, 0)} className="py-2 text-[#EFE6CC]/60 hover:text-[#E9CF86] transition-colors">About</Link>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="py-2 text-[#EFE6CC]/60 hover:text-[#E9CF86] transition-colors">Contact</Link>
+              <Link to="/terms" onClick={() => window.scrollTo(0, 0)} className="py-2 text-[#EFE6CC]/60 hover:text-[#E9CF86] transition-colors">Terms of Use</Link>
+              <Link to="/privacy" onClick={() => window.scrollTo(0, 0)} className="py-2 text-[#EFE6CC]/60 hover:text-[#E9CF86] transition-colors">Privacy Policy</Link>
+            </nav>
+          </div>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold text-[#EFE6CC]/70 hover:text-[#E9CF86] transition-colors"
+            className="inline-flex items-center gap-1.5 py-2 text-xs uppercase tracking-widest font-bold text-[#EFE6CC]/70 hover:text-[#E9CF86] transition-colors"
           >
             Back to top <ArrowUp size={13} />
           </button>

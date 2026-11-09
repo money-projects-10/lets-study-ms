@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BrandSelect from '@/components/BrandSelect';
 
 // Curriculum Data
 const CURRICULA = {
@@ -193,7 +194,7 @@ const SemesterBatch = () => {
             <div className="w-20 h-20 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto mb-8 ring-1 ring-primary/20">
               <GraduationCap size={40} className="text-primary" />
             </div>
-            <h1 className="text-6xl font-black mb-6 shimmer-text tracking-tight uppercase">Semester Batch</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl break-words font-black mb-6 shimmer-text tracking-tight uppercase">Semester Batch</h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Excel in your semester exams with targeted preparation aligned perfectly with your university syllabus.
             </p>
@@ -218,7 +219,7 @@ const SemesterBatch = () => {
               </div>
             </motion.div>
 
-            <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="relative group">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="hidden md:block relative group">
               <div className="absolute -inset-4 bg-primary/20 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700" />
               <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="Students preparing for university mathematics semester exams at Let's Study MS" loading="lazy" src="https://i.postimg.cc/rpb1yX5v/pexels_karola_g_6256066.jpg" />
             </motion.div>
@@ -230,23 +231,16 @@ const SemesterBatch = () => {
       <section className="py-24 bg-secondary/30 relative">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-5xl font-extrabold text-foreground mb-6 tracking-tight">University Track Selection</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl break-words font-extrabold text-foreground mb-6 tracking-tight">University Track Selection</h2>
             <p className="text-muted-foreground text-lg mb-10">Select your university to view the detailed semester-wise breakdown</p>
 
             <div className="relative max-w-md mx-auto">
-              <select 
-                value={selectedTrack} 
-                onChange={e => setSelectedTrack(e.target.value)} 
-                className="w-full appearance-none bg-card border-2 border-primary/20 text-foreground font-bold text-lg py-5 px-8 rounded-2xl shadow-xl focus:ring-4 focus:ring-primary/10 outline-none cursor-pointer transition-all hover:border-primary/40"
-              >
+              <BrandSelect value={selectedTrack} onChange={e => setSelectedTrack(e.target.value)}>
                 <option value="ju">Jadavpur University</option>
                 <option value="cu">Calcutta University</option>
                 <option value="sxu">St. Xavier's College</option>
                 <option value="pu">Presidency University</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-6 flex items-center text-primary">
-                <ChevronDown size={24} />
-              </div>
+              </BrandSelect>
             </div>
           </motion.div>
 
@@ -259,12 +253,12 @@ const SemesterBatch = () => {
               transition={{ duration: 0.5, ease: "circOut" }} 
               className="max-w-6xl mx-auto"
             >
-              <div className="bg-card p-10 rounded-[2.5rem] shadow-2xl border border-border mb-12 relative overflow-hidden group">
+              <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-border mb-12 relative overflow-hidden group">
                 <div className="relative z-10">
-                  <h3 className="text-4xl font-black text-primary mb-4 flex items-center">
-                    <Library className="mr-4" size={36} /> {CURRICULA[selectedTrack].name}
+                  <h3 className="text-2xl sm:text-4xl font-black text-primary mb-4 flex flex-wrap items-center gap-y-1">
+                    <Library className="mr-3 sm:mr-4 shrink-0 w-7 h-7 sm:w-9 sm:h-9" size={36} /> {CURRICULA[selectedTrack].name}
                   </h3>
-                  <p className="text-muted-foreground text-lg mb-0 leading-relaxed italic">{CURRICULA[selectedTrack].description}</p>
+                  <p className="text-muted-foreground text-base sm:text-lg mb-0 leading-relaxed italic">{CURRICULA[selectedTrack].description}</p>
                 </div>
               </div>
 
@@ -279,7 +273,7 @@ const SemesterBatch = () => {
                   >
                     <div className="bg-primary text-primary-foreground p-6 flex justify-between items-center">
                       <h4 className="font-bold text-xl">{sem.title}</h4>
-                      <div className="bg-white/20 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter">SEM {sem.id}</div>
+                      <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-black uppercase tracking-tighter whitespace-nowrap shrink-0">SEM {sem.id}</div>
                     </div>
                     <div className="p-8">
                       <h5 className="text-primary font-black text-xs uppercase tracking-widest flex items-center mb-6">
@@ -306,7 +300,7 @@ const SemesterBatch = () => {
       <section className="py-24">
         <div className="container mx-auto px-4 text-center">
           <motion.div {...fadeInUp} className="mb-16">
-            <h2 className="text-5xl font-black text-foreground mb-4">What You'll Get</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl break-words font-black text-foreground mb-4">What You'll Get</h2>
             <p className="text-muted-foreground text-lg">Everything you need to ace your semester exams.</p>
           </motion.div>
 
@@ -333,7 +327,7 @@ const SemesterBatch = () => {
           <div className="absolute inset-0 opacity-10 noise-bg" />
           <div className="container mx-auto px-4 text-center relative z-10">
             <motion.div {...fadeInUp}>
-              <h2 className="text-5xl font-black text-primary-foreground mb-8">Ready to Excel in Your Exams?</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl break-words font-black text-primary-foreground mb-8">Ready to Excel in Your Exams?</h2>
               <p className="text-primary-foreground/80 text-xl mb-12 max-w-2xl mx-auto">
                 Join our Semester Batch and achieve the grades you deserve with expert guidance.
               </p>

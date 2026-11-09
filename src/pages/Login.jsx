@@ -126,7 +126,7 @@ const Login = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl font-black text-primary mb-6 shimmer-text tracking-tight">Study Repository</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl break-words font-black text-primary mb-6 shimmer-text tracking-tight">Study Repository</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
               Curated notes, assignments, and problem sets to help you excel in your exams.
               Access high-quality mathematical resources.

@@ -96,7 +96,7 @@ const ContactUs = () => {
 
       <Header />
 
-      <section className="relative py-24 px-4 overflow-hidden border-b border-border">
+      <section className="relative pt-28 pb-14 md:py-24 px-4 overflow-hidden border-b border-border">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gold/15 rounded-full blur-[80px]" />
@@ -104,7 +104,7 @@ const ContactUs = () => {
 
         <div className="container mx-auto text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="text-6xl font-black mb-6 shimmer-text tracking-tighter">Get In Touch</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl break-words font-black mb-6 shimmer-text tracking-tighter">Get In Touch</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Have questions about our batches? We're here to help you on your mathematical journey.
             </p>
@@ -112,7 +112,7 @@ const ContactUs = () => {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -149,9 +149,9 @@ const ContactUs = () => {
                   <motion.div 
                     key={i}
                     whileHover={{ x: 10 }}
-                    className="flex items-center space-x-6 p-6 bg-card rounded-3xl shadow-sm border border-border group hover:border-primary transition-all duration-300"
+                    className="flex items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-card rounded-3xl shadow-sm border border-border group hover:border-primary transition-all duration-300"
                   >
-                    <div className="p-4 bg-primary/10 text-primary rounded-2xl group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                    <div className="shrink-0 p-3 sm:p-4 bg-primary/10 text-primary rounded-2xl group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                       <item.icon size={24} />
                     </div>
                     <div>
@@ -159,7 +159,7 @@ const ContactUs = () => {
                       {item.links ? (
                         <div className="flex flex-col">
                           {item.links.map((link, idx) => (
-                            <a key={idx} href={link.url} className="text-foreground font-medium text-lg hover:text-primary transition-colors">
+                            <a key={idx} href={link.url} className="block py-1 text-foreground font-medium text-base sm:text-lg hover:text-primary transition-colors break-all">
                               {link.text}
                             </a>
                           ))}
@@ -178,18 +178,23 @@ const ContactUs = () => {
 
             {/* Form */}
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-              <div className="bg-card p-10 rounded-[2.5rem] shadow-xl border border-border relative overflow-hidden group">
-                <h2 className="text-3xl font-bold text-foreground mb-8">Send Us a Message</h2>
+              <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl border border-border relative overflow-hidden group">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 sm:mb-8">Send Us a Message</h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-6 relative z-10"
+                  toolname="send_enquiry"
+                  tooldescription="Send an admission or course enquiry to Let's Study MS. They reply by phone or email, usually within 24 hours."
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input name="name" value={formData.name} onChange={handleChange} required className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Name" />
-                    <input name="email" value={formData.email} onChange={handleChange} required className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Email" />
+                    <input name="name" autoComplete="name" aria-label="Name" value={formData.name} onChange={handleChange} required className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Name" />
+                    <input name="email" type="email" autoComplete="email" aria-label="Email" value={formData.email} onChange={handleChange} required className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Email" />
                   </div>
                   
-                  <input name="phone" value={formData.phone} onChange={handleChange} required className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Phone Number" />
+                  <input name="phone" type="tel" inputMode="tel" autoComplete="tel" aria-label="Phone number" value={formData.phone} onChange={handleChange} required className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Phone Number" />
 
-                  <select name="course" value={formData.course} onChange={handleChange} className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all appearance-none cursor-pointer">
+                  <select name="course" aria-label="Interested batch" value={formData.course} onChange={handleChange} className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all appearance-none cursor-pointer">
                     <option value="">Interested Batch</option>
                     <option value="Foundation Batch">Foundation Batch</option>
                     <option value="Semester Batch">Semester Batch</option>
@@ -198,7 +203,7 @@ const ContactUs = () => {
                     <option value="Engineering Mathematics">Engineering Mathematics</option>
                   </select>
 
-                  <select name="university" value={formData.university} onChange={handleChange} className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all appearance-none cursor-pointer">
+                  <select name="university" aria-label="Current university" value={formData.university} onChange={handleChange} className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all appearance-none cursor-pointer">
                     <option value="">Current University</option>
                     <option value="Jadavpur">Jadavpur University</option>
                     <option value="Calcutta">Calcutta University</option>
@@ -208,10 +213,10 @@ const ContactUs = () => {
                   </select>
 
                   {formData.university === 'other' && (
-                    <input name="otherUniversity" value={formData.otherUniversity} onChange={handleChange} required className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Please specify university" />
+                    <input name="otherUniversity" aria-label="Your university" value={formData.otherUniversity} onChange={handleChange} required className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Please specify university" />
                   )}
 
-                  <textarea name="message" value={formData.message} onChange={handleChange} required rows={4} className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all resize-none" placeholder="How can we help?" />
+                  <textarea name="message" aria-label="Message" value={formData.message} onChange={handleChange} required rows={4} className="w-full px-5 py-4 bg-secondary/30 border border-border rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all resize-none" placeholder="How can we help?" />
 
                   <button 
                     type="submit" 

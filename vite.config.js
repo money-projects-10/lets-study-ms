@@ -3,12 +3,12 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './',
+  base: '/',
   plugins: [react()],
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
   server: {

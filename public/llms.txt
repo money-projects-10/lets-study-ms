@@ -1,25 +1,31 @@
 # Let's Study MS — School of Mathematics
-> One of West Bengal's top mathematical institutes for higher education. Expert preparation for BSc Honours, MSc Entrances, IIT JAM, TIFR, NBHM, ISI and PhD entrances.
+> Mathematics institute in Khardaha, Kolkata (West Bengal, India), founded in 2022 and affiliated with the Ramanujan School of Mathematics (RSM). Expert preparation for BSc Honours, MSc entrances (IIT JAM, ISI, TIFR, NBHM, CMI), M.Tech / Data Science / MSc Economics, engineering mathematics and PhD entrances. Faculty from IIT, ISI and IISc.
+
+Every page below is also available as Markdown: add `.md` to the URL (the home page is /index.md) or send `Accept: text/markdown`. A read-only MCP server is available at https://letsstudyms.com/mcp (server card: https://letsstudyms.com/.well-known/mcp/server-card.json).
 
 ## About
-- [Home](https://letsstudyms.com/): Overview of the institute, courses, mentors, and success stories
-- [Contact](https://letsstudyms.com/contact): Enquiry form, phone numbers, email, and physical address
+- [Home](https://letsstudyms.com/index.md): Overview of the institute, courses, mentors and success stories
+- [About](https://letsstudyms.com/about.md): Story, teaching areas, mentors and results
+- [Contact](https://letsstudyms.com/contact.md): Enquiry form, phone numbers, email and address
 
 ## Courses
-- [Foundation Batch](https://letsstudyms.com/courses/foundation-batch): Build strong mathematical fundamentals for undergraduate students
-- [Semester Batch](https://letsstudyms.com/courses/semester-batch): Targeted preparation for semester exams
-- [MSc Mathematics Entrances](https://letsstudyms.com/courses/msc-mathematics): IIT JAM, TIFR, ISI, NBHM, CMI entrance coaching
-- [MTech / Data Science / MSc Economics](https://letsstudyms.com/courses/mtech-datascience): Specialized preparation for interdisciplinary programs
-- [Engineering Mathematics](https://letsstudyms.com/courses/engineering-mathematics): Comprehensive engineering mathematics for all branches
-- [PhD Entrances](https://letsstudyms.com/courses/phd-entrances): Advanced preparation for doctoral program admissions
-- [Advanced Courses](https://letsstudyms.com/courses/advanced-courses): Specialized topics for research and competitive excellence
+- [Foundation Batch](https://letsstudyms.com/courses/foundation-batch.md): Strong mathematical fundamentals for undergraduate students
+- [Semester Batch](https://letsstudyms.com/courses/semester-batch.md): Targeted preparation for semester exams
+- [MSc Mathematics Entrances](https://letsstudyms.com/courses/msc-mathematics.md): IIT JAM, TIFR, ISI, NBHM, CMI entrance coaching
+- [MTech / Data Science / MSc Economics](https://letsstudyms.com/courses/mtech-datascience.md): Preparation for interdisciplinary programmes
+- [Engineering Mathematics](https://letsstudyms.com/courses/engineering-mathematics.md): Engineering mathematics for all branches
+- [PhD Entrances](https://letsstudyms.com/courses/phd-entrances.md): Preparation for doctoral admissions
+- [Advanced Courses](https://letsstudyms.com/courses/advanced-courses.md): Research-level topics
 
 ## Success Stories
-- [Hall of Fame](https://letsstudyms.com/testimonials): Alumni success stories — IIT JAM AIR 37, CSIR NET AIR 6, GATE AIR 25, placements at ISI Kolkata, IISc Bangalore, TIFR, HRI, IIT Bombay, University of Connecticut (PhD)
+- [Hall of Fame](https://letsstudyms.com/testimonials.md): Alumni results — IIT JAM AIR 37, CSIR NET AIR 6, GATE AIR 25; alumni at ISI Kolkata, IISc Bangalore, TIFR, HRI, IIT Bombay, University of Connecticut (PhD)
 
 ## Key Facts
-- Located in Khardaha, Kolkata, West Bengal, India
-- Faculty from IIT Kanpur, ISI Kolkata, IISc Bangalore
-- Students placed at IITs, ISI, IISc, TIFR, HRI, IISER, and international universities
-- Phone: +91 8481819726, +91 8777484102
+- Address: 118/105, Rabindrapally, Khardaha, Kolkata - 700117, West Bengal, India
+- Phone: +91 8777484102, +91 8481819726
 - Email: letsstudy2022bu@gmail.com
+- School coaching (Std 5–12, CBSE / ICSE / WB Board): https://ls2mschool.com
+
+## Optional
+- [Terms of use](https://letsstudyms.com/terms.md)
+- [Privacy policy](https://letsstudyms.com/privacy.md)

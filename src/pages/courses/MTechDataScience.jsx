@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BrandSelect from '@/components/BrandSelect';
 
 // === 1. UPDATED DATA STRUCTURE ===
 const CURRICULA = {
@@ -504,7 +505,7 @@ const MTechDataScience = () => {
             <div className="w-20 h-20 bg-primary/10 rounded-[2rem] flex items-center justify-center mx-auto mb-8 ring-1 ring-primary/20">
               <TrendingUp size={40} className="text-primary" />
             </div>
-            <h1 className="text-6xl font-black mb-6 shimmer-text tracking-tight uppercase leading-tight">M.Tech | Data Science | Economics</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl break-words font-black mb-6 shimmer-text tracking-tight uppercase leading-tight">M.Tech | Data Science | Economics</h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
               Specialized interdisciplinary preparation for the world's most sought-after research and technology programs.
             </p>
@@ -528,7 +529,7 @@ const MTechDataScience = () => {
               </div>
             </motion.div>
 
-            <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="relative group">
+            <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }} className="hidden md:block relative group">
                <div className="absolute -inset-4 bg-primary/20 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-700" />
                <img className="relative w-full h-[500px] rounded-[2.5rem] shadow-2xl object-cover border border-border" alt="MTech Data Science, Machine Learning and mathematical analytics preparation" loading="lazy" src="https://i.postimg.cc/BQVQVS3C/pexels_cottonbro_6153354.jpg" />
             </motion.div>
@@ -540,39 +541,25 @@ const MTechDataScience = () => {
       <section className="py-24 bg-secondary/30 relative">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div {...fadeInUp} className="text-center mb-16">
-            <h2 className="text-5xl font-extrabold text-foreground mb-6 tracking-tight">Curriculum Explorer</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl break-words font-extrabold text-foreground mb-6 tracking-tight">Curriculum Explorer</h2>
             <p className="text-muted-foreground text-lg mb-10">Select your specialization track to explore the deep dive syllabus</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
               <div className="relative">
-                <select 
-                  value={selectedComponent} 
-                  onChange={handleComponentChange}
-                  className="w-full appearance-none bg-card border-2 border-primary/20 text-foreground font-bold text-lg py-5 px-8 rounded-2xl shadow-xl focus:ring-4 focus:ring-primary/10 outline-none cursor-pointer transition-all hover:border-primary/40"
-                >
+                <BrandSelect value={selectedComponent} onChange={handleComponentChange}>
                   {Object.entries(CURRICULA).map(([key, val]) => (
                     <option key={key} value={key}>{val.name}</option>
                   ))}
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-6 flex items-center text-primary">
-                  <ChevronDown size={24} />
-                </div>
+                </BrandSelect>
               </div>
 
               {CURRICULA[selectedComponent].type === 'nested' ? (
                 <div className="relative">
-                  <select 
-                    value={selectedSubOption} 
-                    onChange={e => setSelectedSubOption(e.target.value)}
-                    className="w-full appearance-none bg-card border-2 border-primary/20 text-foreground font-bold text-lg py-5 px-8 rounded-2xl shadow-xl focus:ring-4 focus:ring-primary/10 outline-none cursor-pointer transition-all hover:border-primary/40"
-                  >
+                  <BrandSelect value={selectedSubOption} onChange={e => setSelectedSubOption(e.target.value)}>
                     {CURRICULA[selectedComponent].subOptions.map(option => (
                       <option key={option.id} value={option.id}>{option.name}</option>
                     ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-6 flex items-center text-primary">
-                    <ChevronDown size={24} />
-                  </div>
+                  </BrandSelect>
                 </div>
               ) : <div className="hidden md:block" />}
             </div>
@@ -587,11 +574,11 @@ const MTechDataScience = () => {
               transition={{ duration: 0.5, ease: "circOut" }} 
               className="max-w-6xl mx-auto"
             >
-              <div className="bg-card p-10 rounded-[2.5rem] shadow-2xl border border-border mb-12 relative overflow-hidden group">
-                <h3 className="text-4xl font-black text-primary mb-2 flex items-center">
-                  <Library className="mr-4" size={36} /> {currentComponentData.name}
+              <div className="bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-border mb-12 relative overflow-hidden group">
+                <h3 className="text-2xl sm:text-4xl font-black text-primary mb-2 flex flex-wrap items-center gap-y-1">
+                  <Library className="mr-3 sm:mr-4 shrink-0 w-7 h-7 sm:w-9 sm:h-9" size={36} /> {currentComponentData.name}
                 </h3>
-                <p className="text-muted-foreground text-lg italic mt-4 font-medium pl-14">
+                <p className="text-muted-foreground text-base sm:text-lg italic mt-4 font-medium sm:pl-14">
                   {currentComponentData.description}
                 </p>
               </div>
@@ -627,7 +614,7 @@ const MTechDataScience = () => {
               </div>
 
               {currentComponentData.refs && (
-                <div className="mt-16 bg-card p-10 rounded-[2.5rem] border border-border shadow-2xl">
+                <div className="mt-16 bg-card p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-border shadow-2xl">
                    <h4 className="text-2xl font-black text-foreground mb-8 flex items-center">
                      <BookOpen size={28} className="mr-4 text-primary" /> Recommended Literature
                    </h4>
@@ -650,7 +637,7 @@ const MTechDataScience = () => {
       <section className="py-24">
         <div className="container mx-auto px-4 text-center">
           <motion.div {...fadeInUp} className="mb-16">
-            <h2 className="text-5xl font-black text-foreground mb-4">Why Choose Our Program?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl break-words font-black text-foreground mb-4">Why Choose Our Program?</h2>
             <p className="text-muted-foreground text-lg">Specialized training for interdisciplinary success in competitive landscapes.</p>
           </motion.div>
 
@@ -677,7 +664,7 @@ const MTechDataScience = () => {
           <div className="absolute inset-0 opacity-10 noise-bg" />
           <div className="container mx-auto px-4 text-center relative z-10">
             <motion.div {...fadeInUp}>
-              <h2 className="text-5xl font-black text-primary-foreground mb-8">Ready to Transition to Data Science?</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl break-words font-black text-primary-foreground mb-8">Ready to Transition to Data Science?</h2>
               <p className="text-primary-foreground/80 text-xl mb-12 max-w-2xl mx-auto">
                 Join our specialized program and bridge the gap between mathematics and technology.
               </p>

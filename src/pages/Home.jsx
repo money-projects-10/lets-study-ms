@@ -4,11 +4,47 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen, Users, Award, TrendingUp,
-  GraduationCap, Brain, Trophy, Target, Quote, ExternalLink, ArrowRight, ArrowUpRight
+  GraduationCap, Brain, Trophy, Target, Quote, ExternalLink, ArrowRight, ArrowUpRight, ChevronDown
 } from 'lucide-react';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+// Details open on hover with a mouse, and on tap on touch screens (which have no hover).
+const MemberCard = ({ member }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="group bg-card rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-border hover-lift">
+      <h3>
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          className="w-full flex items-center gap-4 p-5 text-left cursor-pointer lg:cursor-default"
+        >
+          <span className={`p-3 rounded-full flex-shrink-0 transition-colors duration-300 ${open ? 'bg-primary' : 'bg-primary/10 group-hover:bg-primary'}`}>
+            <Users className={`transition-colors duration-300 ${open ? 'text-primary-foreground' : 'text-primary group-hover:text-primary-foreground'}`} size={24} />
+          </span>
+          <span className="flex-1 min-w-0">
+            <span className="block font-bold text-foreground text-lg group-hover:text-primary transition-colors">{member.name}</span>
+            <span className="block font-['Inter',system-ui,sans-serif] text-primary text-xs font-bold uppercase tracking-wide">{member.highlight}</span>
+          </span>
+          <ChevronDown size={18} className={`text-primary/60 shrink-0 transition-transform duration-300 lg:hidden ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+        </button>
+      </h3>
+      <div className={`overflow-hidden transition-all duration-500 ease-in-out ${open ? 'max-h-96' : 'max-h-0 lg:group-hover:max-h-96'}`}>
+        <ul className="mx-5 pb-5 pt-4 border-t border-border text-sm text-muted-foreground space-y-2">
+          {member.details.map((line, i) => (
+            <li key={i} className="flex items-start">
+              <span className="text-primary mr-2" aria-hidden="true">•</span>
+              <span className="leading-snug">{line}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   const { hash } = useLocation();
@@ -305,31 +341,6 @@ const Home = () => {
     transition: { duration: 0.6 }
   };
 
-  const MemberCard = ({ member }) => (
-    <div className="group bg-card rounded-2xl p-5 shadow-md hover:shadow-2xl transition-all duration-500 border border-border cursor-default hover-lift">
-      <div className="flex items-center space-x-4">
-        <div className="bg-primary/10 p-3 rounded-full flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
-          <Users className="text-primary group-hover:text-primary-foreground transition-colors duration-300" size={24} />
-        </div>
-        <div className="flex-1">
-          <h3 className="font-bold text-foreground text-lg group-hover:text-primary transition-colors">{member.name}</h3>
-          <p className="text-primary text-xs font-bold uppercase tracking-wide">{member.highlight}</p>
-        </div>
-      </div>
-      <div className="max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-500 ease-in-out">
-        <div className="pt-4 mt-4 border-t border-border text-sm text-muted-foreground space-y-2">
-          {member.details.map((line, i) => (
-            <div key={i} className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <p className="leading-snug">{line}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-
-
   const floatingSymbols = [
     { icon: '∑', top: '15%', left: '10%', delay: 0 },
     { icon: 'π', top: '25%', left: '85%', delay: 1 },
@@ -392,6 +403,7 @@ const Home = () => {
           >
             <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
               LET'S <span className="shimmer-text pr-2">STUDY </span> MS
+              <span className="sr-only"> — School of Mathematics in Kolkata, West Bengal</span>
             </h1>
 
             <div className="flex items-center justify-center space-x-4 mb-4 mt-8">
@@ -471,7 +483,7 @@ const Home = () => {
                       </div>
                       {/* No underline classes here */}
                       <h3 className="text-2xl font-bold mb-3 text-primary">{item.title}</h3>
-                      <p className="text-justify text-muted-foreground">{item.description}</p>
+                      <p className="text-left sm:text-justify text-muted-foreground">{item.description}</p>
                     </a>
                   ) : (
                     // 2. Internal Link (Foundation/Team) - Whole Card Clickable
@@ -493,7 +505,7 @@ const Home = () => {
                       <item.icon size={48} className="mb-4 text-primary group-hover:scale-110 transition-transform" />
                       {/* Removed underline classes */}
                       <h3 className="text-2xl font-bold mb-3 text-primary">{item.title}</h3>
-                      <p className="text-justify text-muted-foreground">{item.description}</p>
+                      <p className="text-left sm:text-justify text-muted-foreground">{item.description}</p>
                     </Link>
                   )
                 ) : (
@@ -501,7 +513,7 @@ const Home = () => {
                   <div className="block p-8 h-full text-foreground cursor-default">
                     <item.icon size={48} className="mb-4 text-primary" />
                     <h3 className="text-2xl font-bold mb-3 text-primary">{item.title}</h3>
-                    <p className="text-justify text-muted-foreground">{item.description}</p>
+                    <p className="text-left sm:text-justify text-muted-foreground">{item.description}</p>
 
                   </div>
                 )}
@@ -524,12 +536,12 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl font-black text-foreground mb-4 tracking-tight uppercase">Explore Our Batches</h2>
+            <h2 className="text-4xl sm:text-5xl font-black text-foreground mb-4 tracking-tight uppercase">Explore Our Batches</h2>
             <div className="w-24 h-1.5 bg-primary mx-auto rounded-full mb-8" />
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -552,14 +564,14 @@ const Home = () => {
                 }}
               >
                 <Link to={course.path} onClick={() => window.scrollTo(0, 0)} className="block h-full">
-                  <div className="bg-card p-8 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-border h-full hover-lift group overflow-hidden relative">
+                  <div className="bg-card p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-border h-full hover-lift group overflow-hidden relative">
                     <div className="relative z-10 flex flex-col h-full">
-                      <div className="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 ring-1 ring-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
-                        <course.icon size={32} className="text-primary group-hover:text-primary-foreground transition-colors duration-500" />
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-5 sm:mb-8 ring-1 ring-primary/20 group-hover:bg-primary group-hover:scale-110 transition-all duration-500">
+                        <course.icon size={28} className="text-primary group-hover:text-primary-foreground transition-colors duration-500" />
                       </div>
-                      <h3 className="text-2xl font-black text-foreground mb-4 group-hover:text-primary transition-colors tracking-tight">{course.title}</h3>
+                      <h3 className="text-xl sm:text-2xl font-black text-foreground mb-3 sm:mb-4 group-hover:text-primary transition-colors tracking-tight">{course.title}</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed flex-grow font-medium">{course.description}</p>
-                      <div className="mt-8 pt-6 border-t border-border flex items-center text-primary text-xs font-black uppercase tracking-[0.2em] transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="mt-5 pt-4 sm:mt-8 sm:pt-6 border-t border-border flex items-center text-primary text-xs font-black uppercase tracking-[0.2em] transition-all duration-500 lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
                         View Details <ArrowRight size={14} className="ml-2" />
                       </div>
                     </div>
@@ -609,7 +621,7 @@ const Home = () => {
               <Link
                 to="/testimonials"
                 onClick={() => window.scrollTo(0, 0)}
-                className="mt-8 inline-flex items-center gap-1.5 font-semibold text-foreground underline decoration-gold decoration-2 underline-offset-4 hover:decoration-foreground"
+                className="mt-6 py-2 inline-flex items-center gap-1.5 font-semibold text-foreground underline decoration-gold decoration-2 underline-offset-4 hover:decoration-foreground"
               >
                 Read all success stories <ArrowUpRight size={16} />
               </Link>

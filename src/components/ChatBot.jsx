@@ -83,7 +83,7 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col items-end space-y-4">
 
       {/* Chat Window */}
       <AnimatePresence>
@@ -215,7 +215,7 @@ const ChatBot = () => {
       </AnimatePresence>
 
       {/* Buttons Container */}
-      <div className="flex flex-col items-end gap-3 md:gap-6">
+      <div className="flex flex-col items-end gap-2.5 md:gap-6">
 
         {/* WhatsApp Button */}
         <motion.a
@@ -224,7 +224,8 @@ const ChatBot = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-[#25D366] text-white p-3 md:p-4 rounded-2xl md:rounded-[1.25rem] shadow-2xl flex items-center justify-center transition-all relative group ring-4 ring-[#25D366]/20"
+          aria-label="Chat with us on WhatsApp"
+          className="bg-[#25D366] text-white p-2.5 md:p-4 rounded-2xl md:rounded-[1.25rem] shadow-xl md:shadow-2xl flex items-center justify-center transition-all relative group ring-2 md:ring-4 ring-[#25D366]/20"
         >
           <span className="hidden md:block absolute right-full mr-4 bg-gray-900 border border-white/10 text-white text-[10px] font-black uppercase tracking-widest py-2 px-3 rounded-xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap pointer-events-none translate-x-4 group-hover:translate-x-0">
             WhatsApp Support
@@ -237,7 +238,8 @@ const ChatBot = () => {
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9 }}
-          className={`relative group p-3 md:p-4 rounded-2xl md:rounded-[1.25rem] shadow-2xl flex items-center justify-center transition-all ring-4 ${isOpen ? 'bg-secondary text-foreground ring-foreground/5 rotate-90' : 'bg-primary text-primary-foreground ring-primary/20'
+          aria-label={isOpen ? 'Close chat assistant' : 'Open chat assistant'}
+          className={`relative group p-2.5 md:p-4 rounded-2xl md:rounded-[1.25rem] shadow-xl md:shadow-2xl flex items-center justify-center transition-all ring-2 md:ring-4 ${isOpen ? 'bg-secondary text-foreground ring-foreground/5 rotate-90' : 'bg-primary text-primary-foreground ring-primary/20'
             }`}
         >
           <span className="hidden md:block absolute right-full mr-4 bg-gray-900 border border-white/10 text-white text-[10px] font-black uppercase tracking-widest py-2 px-3 rounded-xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap pointer-events-none translate-x-4 group-hover:translate-x-0">

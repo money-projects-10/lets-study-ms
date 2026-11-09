@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import ChatBot from '@/components/ChatBot';
 import Home from '@/pages/Home';
@@ -14,6 +14,9 @@ import EngineeringMathematics from '@/pages/courses/EngineeringMathematics';
 import PhDEntrances from '@/pages/courses/PhDEntrances';
 import AdvancedCourses from '@/pages/courses/AdvancedCourses';
 import NotFound from '@/pages/NotFound';
+import About from '@/pages/About';
+import Terms from '@/pages/Terms';
+import Privacy from '@/pages/Privacy';
 import CustomCursor from '@/components/CustomCursor';
 import ScrollProgress from '@/components/ScrollProgress';
 import { AnimatePresence } from 'framer-motion';
@@ -25,8 +28,9 @@ function App() {
     try { localStorage.removeItem('theme'); } catch { /* storage unavailable */ }
   }, []);
 
+  // The router is supplied by the caller: BrowserRouter in main.jsx, StaticRouter when prerendering.
   return (
-    <Router>
+    <>
       <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white noise-bg overflow-x-hidden">
         <CustomCursor />
         <ScrollProgress />
@@ -36,6 +40,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="/courses/foundation-batch" element={<FoundationBatch />} />
             <Route path="/courses/semester-batch" element={<SemesterBatch />} />
             <Route path="/courses/msc-mathematics" element={<MScMathematics />} />
@@ -49,7 +56,7 @@ function App() {
         <ChatBot />
         <Toaster />
       </div>
-    </Router>
+    </>
   );
 }
 
