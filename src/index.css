@@ -1,0 +1,180 @@
+/* Same type system as ls2mschool.com: Outfit headings, Inter body, Playfair Display italic accents */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode - "Ivory & Emerald" (from the Let's Study badge) */
+    --background: 42 38% 97%;          /* warm ivory */
+    --foreground: 165 45% 9%;          /* green-black ink */
+    --card: 40 50% 99%;
+    --card-foreground: 165 45% 9%;
+    --popover: 40 50% 99%;
+    --popover-foreground: 165 45% 9%;
+    --primary: 166 68% 15%;            /* badge green #0C4136 */
+    --primary-foreground: 44 70% 92%;  /* cream */
+    --secondary: 42 40% 92%;
+    --secondary-foreground: 166 55% 13%;
+    --muted: 42 30% 93%;
+    --muted-foreground: 165 12% 36%;
+    --accent: 43 70% 90%;              /* pale gold wash */
+    --accent-foreground: 166 68% 15%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 44 70% 96%;
+    --border: 40 25% 85%;
+    --input: 40 25% 85%;
+    --ring: 42 65% 48%;
+    --gold: 42 65% 50%;                /* rim gold #D2A23A */
+    --gold-light: 46 80% 74%;          /* highlight #F2D98A */
+    --gold-foreground: 166 68% 12%;
+    --gold-ink: 36 72% 32%;            /* darker gold for small text on ivory */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Mode - "Midnight Emerald" with gold as the lead colour */
+    --background: 166 55% 5%;
+    --foreground: 44 40% 93%;
+    --card: 166 45% 8%;
+    --card-foreground: 44 40% 93%;
+    --popover: 166 50% 6%;
+    --popover-foreground: 44 40% 93%;
+    --primary: 43 68% 62%;             /* gold */
+    --primary-foreground: 166 68% 8%;
+    --secondary: 166 32% 13%;
+    --secondary-foreground: 44 40% 93%;
+    --muted: 166 30% 13%;
+    --muted-foreground: 160 10% 66%;
+    --accent: 166 32% 15%;
+    --accent-foreground: 44 60% 85%;
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 44 40% 96%;
+    --border: 166 25% 17%;
+    --input: 166 25% 17%;
+    --ring: 43 68% 62%;
+    --gold: 43 68% 62%;
+    --gold-light: 46 85% 80%;
+    --gold-foreground: 166 68% 8%;
+    --gold-ink: 43 68% 62%;
+  }
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Outfit', system-ui, sans-serif;
+    line-height: 1.15;
+  }
+}
+
+/* Gold ornament divider, echoing the badge rim */
+.gold-rule {
+  @apply h-px bg-gradient-to-r from-transparent via-gold to-transparent;
+}
+
+/* Thin gold edge for highlighted cards */
+.gold-edge {
+  box-shadow: inset 0 0 0 1px hsl(var(--gold) / 0.35), 0 20px 40px -24px hsl(var(--primary) / 0.35);
+}
+
+@layer base {
+  @media (pointer: fine) {
+    * {
+      @apply border-border;
+      cursor: none !important;
+    }
+  }
+  @media (pointer: coarse) {
+    * {
+      @apply border-border;
+    }
+  }
+  body {
+    @apply bg-background text-foreground font-['Inter',system-ui,sans-serif] selection:bg-primary/30 selection:text-foreground overflow-x-hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-background/60 backdrop-blur-md border border-white/10 shadow-2xl;
+}
+
+.dark .glass {
+  @apply bg-card/60 border-white/5;
+}
+
+/* Dynamic Island Style */
+.dynamic-island {
+  @apply fixed top-4 left-1/2 -translate-x-1/2 z-50 glass rounded-2xl border-b-2 border-b-gold/60 px-4 py-0.5 transition-all duration-500;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  @apply fixed w-2 h-2 bg-primary rounded-full pointer-events-none z-[999] shadow-[0_0_10px_hsl(var(--gold)/0.5)];
+  transition: transform 0.15s ease-out;
+}
+
+.cursor-outline {
+  @apply fixed w-8 h-8 border border-primary/30 rounded-full pointer-events-none z-[999];
+  transition: transform 0.25s ease-out, width 0.3s, height 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Interactive Animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Shimmer Text */
+.shimmer-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-gold to-primary bg-[length:300%_auto];
+  animation: shimmer 5s linear infinite;
+}
+
+.dark .shimmer-text {
+  @apply bg-gradient-to-r from-gold via-gold-light to-gold;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Noise Texture Overlay */
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 100;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3%3C/filter%3%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3%3C/svg%3");
+}
+/* Long-form content pages (About, Terms, Privacy) */
+.prose-info { @apply text-base sm:text-lg leading-relaxed text-foreground/85; }
+.prose-info h2 { @apply font-display font-bold text-2xl sm:text-3xl text-primary mt-12 mb-4 first:mt-0; }
+.prose-info p { @apply mb-5; }
+.prose-info ul { @apply list-disc pl-6 mb-6 space-y-2; }
+.prose-info a { @apply text-primary font-semibold underline decoration-gold/60 underline-offset-4 hover:decoration-gold break-words; }
+.prose-info strong { @apply text-foreground; }

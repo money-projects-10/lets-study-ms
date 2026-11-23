@@ -1,0 +1,37 @@
+# Let's Study MS — School of Mathematics
+# Content signals (https://contentsignals.org): search=yes lets search engines index and link to
+# our pages; ai-input=yes lets AI assistants read pages to answer questions in real time;
+# ai-train=no asks that our content not be used to train AI models.
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+# Search engines and AI search / assistant crawlers: allowed so the institute shows up in
+# Google, Bing, ChatGPT, Claude, Perplexity, Gemini, Copilot, Apple, DuckDuckGo and Meta AI answers.
+# Google-Extended also controls whether Gemini can cite the site, so it is allowed too.
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: DuckAssistBot
+User-agent: meta-externalfetcher
+User-agent: MistralAI-User
+User-agent: YouBot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+# Training-only crawlers that bring no search traffic
+User-agent: Bytespider
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://letsstudyms.com/sitemap.xml
