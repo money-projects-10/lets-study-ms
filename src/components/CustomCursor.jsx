@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const lastPointer = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     // Check if device is mobile/touch
@@ -15,36 +16,49 @@ const CustomCursor = () => {
     checkIsMobile();
     window.addEventListener('resize', checkIsMobile);
     
-    const handleMouseMove = (e) => {
-      if (isHidden) setIsHidden(false);
-      
-      setPosition({ x: e.clientX, y: e.clientY });
-      
-      const target = e.target;
-      const isClickable = 
-        target.tagName === 'A' || 
-        target.tagName === 'BUTTON' || 
-        target.closest('a') || 
-        target.closest('button') ||
+    // Pointer test for whatever is under the dot right now.
+    const updateHover = (target) => {
+      if (!target || !target.closest) return setIsPointer(false);
+      const isClickable =
+        target.closest('a, button') ||
         window.getComputedStyle(target).cursor === 'pointer';
-      
-      setIsPointer(isClickable);
+      setIsPointer(Boolean(isClickable));
+    };
+
+    const handleMouseMove = (e) => {
+      lastPointer.current = { x: e.clientX, y: e.clientY };
+      setIsHidden(false);
+      setPosition({ x: e.clientX, y: e.clientY });
+      updateHover(e.target);
+    };
+
+    // While scrolling, no mousemove fires, so re-read the element under the
+    // last known pointer position. Otherwise the hover state goes stale.
+    let scrollFrame = 0;
+    const handleScroll = () => {
+      if (scrollFrame) return;
+      scrollFrame = requestAnimationFrame(() => {
+        scrollFrame = 0;
+        const { x, y } = lastPointer.current;
+        setPosition({ x, y });
+        updateHover(document.elementFromPoint(x, y));
+      });
     };
 
     const handleMouseLeave = () => setIsHidden(true);
-    const handleMouseEnter = () => setIsHidden(false);
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true, capture: true });
     document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
 
     return () => {
       window.removeEventListener('resize', checkIsMobile);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll, { capture: true });
       document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
+      if (scrollFrame) cancelAnimationFrame(scrollFrame);
     };
-  }, [isHidden]);
+  }, []);
 
   // Don't render on mobile or if hidden
   if (isMobile || isHidden) return null;
